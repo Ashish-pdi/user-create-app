@@ -1,0 +1,37 @@
+<div class="form">
+    <h2>Update User</h2> 
+    <form [formGroup]="userForm" (ngSubmit)="update()" >
+
+        <div class="field">
+            <label for="name" >Name</label>
+            <input id="name" type="text" formControlName="name" />
+            <div *ngIf="name?.errors && name?.touched">
+                Name is invalid.
+            </div>
+        </div>
+        <div class="field">
+            <label for="emal" >Email</label>
+            <input id="email" type="text" formControlName="email" />
+            <div *ngIf="email?.errors && email?.touched">
+                Email is invalid.
+            </div>
+        </div>
+        <div class="field">
+            <label for="mobile" >Mobile</label>
+            <input id="mobile" type="text" formControlName="mobile" />
+            <div *ngIf="mobile?.errors && mobile?.touched">
+                Mobile is invalid.
+            </div>
+        </div>
+        <div class="field">
+            <label for="description" >Description</label>
+            <input id="description" type="text" formControlName="description" />
+            <div *ngIf="description?.errors && description?.touched">
+                Description is invalid.
+            </div>
+        </div>
+
+      
+        <input class="btn" type="submit" [disabled]="!userForm.valid" value="update" />
+    </form>
+</div>

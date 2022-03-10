@@ -1,0 +1,5 @@
+
+<h2>All Users</h2> <button class="btn" (click)="goToCreate()" > + Cretae User</button>
+<ul>
+    <li *ngFor="let user of users">{{user.name}} <button class="btn" (click)="goToEdit(user.id)" >Edit</button> <button class="btn-danger" (click)="deleteUser(user.id)" >X</button>  </li>
+</ul>
